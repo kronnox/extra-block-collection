@@ -45,8 +45,26 @@
   --font-size-heading-s: 24px;
   --font-size-heading-xs: 22px;
 
+  /* break points */
+  --breakpoint-s: 600px; /* <= mobile */
+  --breakpoint-m: 700px; /* <= tablet */
+  --breakpoint-l: 900px; /* <= desktop */
+  --breakpoint-xl: 2200px;
+
+  /* content width */
+  --content-width-l: 1200px;
+  --content-width-xl: 1400px;
+  --content-width: var(--content-width-l);
+
   /* misc */
+  --section-width: var(--content-width);
   --nav-height: 64px;
+}
+
+@media (min-width: 2200px /* breakpoint-xl */) {
+  :root {
+    --section-width: var(--content-width-xl);
+  }
 }
 
 /* fallback fonts */
@@ -62,7 +80,7 @@
   src: local('Arial');
 }
 
-@media (width >= 900px) {
+@media (min-width: 900px /* breakpoint-l */) {
   :root {
     /* body sizes */
     --font-size-body-m: 18px;
@@ -245,7 +263,7 @@ main > .section {
 }
 
 main > .section > div {
-  max-width: 1200px;
+  max-width: var(--section-width);
   margin: auto;
   padding: 0 24px;
 }
@@ -254,7 +272,7 @@ main > .section:first-of-type {
   margin-top: 0;
 }
 
-@media (width >= 900px) {
+@media (min-width: 900px /* breakpoint-l */) {
   main > .section > div {
     padding: 0 32px;
   }
