@@ -2,6 +2,10 @@
 
 Before starting to work on the project, go through these steps to make sure your project skeleton is setup correctly for your needs. Doing this later on might come with additional refactoring work.
 
+## Blocks
+
+Remove the boilerplate blocks at `blocks/` and only add the ones you actually need.
+
 ## Styles
 
 ### Base scale
