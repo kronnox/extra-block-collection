@@ -70,6 +70,9 @@
   }
 }
 
+/* set base scale from 16px to 10px for easy rem scaling */
+html { font-size: 62.5% }
+
 body {
   display: none;
   margin: 0;
