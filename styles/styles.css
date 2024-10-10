@@ -12,23 +12,32 @@
 
 :root {
   /* colors */
-  --color-background: white;
+  --color-white: #fff;
   --color-light-gray: #f8f8f8;
-  --color-dark-gray: #505050;
-  --color-text: #131313;
-  --color-link: #3b63fb;
-  --color-link-hover: #1d3ecf;
+  --color-medium-gray: #505050;
+  --color-dark-gray: #131313;
+  --color-black: #000;
+  --color-blue: #3b63fb;
+  --color-dark-blue: #1d3ecf;
+
+  --color-background: var(--color-white);
+  --color-background-highlighted: var(--color-light-gray);
+  --color-text: var(--color-dark-gray);
+  --color-link: var(--color-blue);
+  --color-link-hover: var(--color-dark-blue);
 
   /* fonts */
-  --font-family-body: roboto, roboto-fallback, sans-serif;
-  --font-family-heading: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --font-family-roboto: roboto, roboto-fallback, sans-serif;
+  --font-family-roboto-condensed: roboto-condensed, roboto-condensed-fallback, sans-serif;
 
-  /* body sizes */
+  --font-family-body: var(--font-family-roboto);
+  --font-family-heading: var(--font-family-roboto-condensed);
+
+  /* font sizes */
   --font-size-body-m: 22px;
   --font-size-body-s: 19px;
   --font-size-body-xs: 17px;
 
-  /* heading sizes */
   --font-size-heading-xxl: 55px;
   --font-size-heading-xl: 44px;
   --font-size-heading-l: 34px;
@@ -36,7 +45,7 @@
   --font-size-heading-s: 24px;
   --font-size-heading-xs: 22px;
 
-  /* nav height */
+  /* misc */
   --nav-height: 64px;
 }
 
@@ -140,7 +149,7 @@ pre {
 pre {
   padding: 16px;
   border-radius: 8px;
-  background-color: var(--color-light-gray);
+  background-color: var(--color-background-highlighted);
   overflow-x: auto;
   white-space: pre;
 }
@@ -202,7 +211,7 @@ button:focus {
 
 button:disabled,
 button:disabled:hover {
-  background-color: var(--color-light-gray);
+  background-color: var(--color-background-highlighted);
   cursor: unset;
 }
 
@@ -254,7 +263,7 @@ main > .section:first-of-type {
 /* section metadata */
 main .section.light,
 main .section.highlight {
-  background-color: var(--color-light-gray);
+  background-color: var(--color-background-highlighted);
   margin: 0;
   padding: 40px 0;
 }
