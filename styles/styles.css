@@ -1,0 +1,287 @@
+/*
+ * Copyright 2020 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+
+:root {
+  /* colors */
+  --color-white: #fff;
+  --color-light-gray: #f8f8f8;
+  --color-medium-gray: #505050;
+  --color-dark-gray: #131313;
+  --color-black: #000;
+  --color-blue: #3b63fb;
+  --color-dark-blue: #1d3ecf;
+
+  --color-background: var(--color-white);
+  --color-background-highlighted: var(--color-light-gray);
+  --color-text: var(--color-dark-gray);
+  --color-link: var(--color-blue);
+  --color-link-hover: var(--color-dark-blue);
+
+  /* fonts */
+  --font-family-roboto: roboto, roboto-fallback, sans-serif;
+  --font-family-roboto-condensed: roboto-condensed, roboto-condensed-fallback, sans-serif;
+
+  --font-family-body: var(--font-family-roboto);
+  --font-family-heading: var(--font-family-roboto-condensed);
+
+  /* font sizes */
+  --font-size-body-m: 2.2rem;
+  --font-size-body-s: 1.9rem;
+  --font-size-body-xs: 1.7rem;
+
+  --font-size-heading-xxl: 5.5rem;
+  --font-size-heading-xl: 4.4rem;
+  --font-size-heading-l: 3.4rem;
+  --font-size-heading-m: 2.7rem;
+  --font-size-heading-s: 2.4rem;
+  --font-size-heading-xs: 2.2rem;
+
+  /* break points */
+  --breakpoint-s: 600px; /* <= mobile */
+  --breakpoint-m: 700px; /* <= tablet */
+  --breakpoint-l: 900px; /* <= desktop */
+  --breakpoint-xl: 2200px;
+
+  /* content width */
+  --content-width-l: 1200px;
+  --content-width-xl: 1400px;
+  --content-width: var(--content-width-l);
+
+  /* misc */
+  --section-width: var(--content-width);
+  --nav-height: 64px;
+}
+
+@media (min-width: 2200px /* breakpoint-xl */) {
+  :root {
+    --section-width: var(--content-width-xl);
+  }
+}
+
+/* fallback fonts */
+@font-face {
+  font-family: roboto-condensed-fallback;
+  size-adjust: 88.82%;
+  src: local('Arial');
+}
+
+@font-face {
+  font-family: roboto-fallback;
+  size-adjust: 99.529%;
+  src: local('Arial');
+}
+
+@media (min-width: 900px /* breakpoint-l */) {
+  :root {
+    /* body sizes */
+    --font-size-body-m: 1.8rem;
+    --font-size-body-s: 1.6rem;
+    --font-size-body-xs: 1.4rem;
+
+    /* heading sizes */
+    --font-size-heading-xxl: 4.5rem;
+    --font-size-heading-xl: 3.6rem;
+    --font-size-heading-l: 2.8rem;
+    --font-size-heading-m: 2.2rem;
+    --font-size-heading-s: 2.0rem;
+    --font-size-heading-xs: 1.8rem;
+  }
+}
+
+/* set base scale from 16px to 10px for easy rem scaling */
+html { font-size: 62.5% }
+
+body {
+  display: none;
+  margin: 0;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-m);
+  line-height: 1.6;
+}
+
+body.appear {
+  display: block;
+}
+
+header {
+  height: var(--nav-height);
+}
+
+header .header,
+footer .footer {
+  visibility: hidden;
+}
+
+header .header[data-block-status="loaded"],
+footer .footer[data-block-status="loaded"] {
+  visibility: visible;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0.8em;
+  margin-bottom: 0.25em;
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  line-height: 1.25;
+  scroll-margin: 40px;
+}
+
+h1 { font-size: var(--font-size-heading-xxl); }
+h2 { font-size: var(--font-size-heading-xl); }
+h3 { font-size: var(--font-size-heading-l); }
+h4 { font-size: var(--font-size-heading-m); }
+h5 { font-size: var(--font-size-heading-s); }
+h6 { font-size: var(--font-size-heading-xs); }
+
+p,
+dl,
+ol,
+ul,
+pre,
+blockquote {
+  margin-top: 0.8em;
+  margin-bottom: 0.25em;
+}
+
+code,
+pre {
+  font-size: var(--font-size-body-s);
+}
+
+pre {
+  padding: 1.6rem;
+  border-radius: 8px;
+  background-color: var(--color-background-highlighted);
+  overflow-x: auto;
+  white-space: pre;
+}
+
+main > div {
+  margin: 4.0rem 1.6rem;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+/* links */
+a:any-link {
+  color: var(--color-link);
+  text-decoration: none;
+  word-break: break-word;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+/* buttons */
+a.button:any-link,
+button {
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 100%;
+  margin: 1.2rem 0;
+  border: 2px solid transparent;
+  border-radius: 2.4em;
+  padding: 0.5em 1.2em;
+  font-family: var(--font-family-body);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--color-link);
+  color: var(--color-background);
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+a.button:hover,
+a.button:focus,
+button:hover,
+button:focus {
+  background-color: var(--color-link-hover);
+  cursor: pointer;
+}
+
+button:disabled,
+button:disabled:hover {
+  background-color: var(--color-background-highlighted);
+  cursor: unset;
+}
+
+a.button.secondary,
+button.secondary {
+  background-color: unset;
+  border: 2px solid currentcolor;
+  color: var(--color-text);
+}
+
+main img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+.icon {
+  display: inline-block;
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.icon img {
+  height: 100%;
+  width: 100%;
+}
+
+/* sections */
+main > .section {
+  margin: 40px 0;
+}
+
+main > .section > div {
+  max-width: var(--section-width);
+  margin: auto;
+  padding: 0 2.4rem;
+}
+
+main > .section:first-of-type {
+  margin-top: 0;
+}
+
+@media (min-width: 900px /* breakpoint-l */) {
+  main > .section > div {
+    padding: 0 3.2rem;
+  }
+}
+
+/* section metadata */
+main .section.light,
+main .section.highlight {
+  background-color: var(--color-background-highlighted);
+  margin: 0;
+  padding: 40px 0;
+}
