@@ -11,7 +11,7 @@
  */
 
 :root {
-  /* colors */
+  /* base colors */
   --color-white: #fff;
   --color-light-gray: #f8f8f8;
   --color-medium-gray: #505050;
@@ -20,24 +20,27 @@
   --color-blue: #3b63fb;
   --color-dark-blue: #1d3ecf;
 
+  /* colors */
   --color-background: var(--color-white);
   --color-background-highlighted: var(--color-light-gray);
   --color-text: var(--color-dark-gray);
   --color-link: var(--color-blue);
   --color-link-hover: var(--color-dark-blue);
 
-  /* fonts */
+  /* base fonts */
   --font-family-roboto: roboto, roboto-fallback, sans-serif;
   --font-family-roboto-condensed: roboto-condensed, roboto-condensed-fallback, sans-serif;
 
+  /* fonts */
   --font-family-body: var(--font-family-roboto);
   --font-family-heading: var(--font-family-roboto-condensed);
 
-  /* font sizes */
+  /* body font sizes */
   --font-size-body-m: 2.2rem;
   --font-size-body-s: 1.9rem;
   --font-size-body-xs: 1.7rem;
 
+  /* heading font sizes */
   --font-size-heading-xxl: 5.5rem;
   --font-size-heading-xl: 4.4rem;
   --font-size-heading-l: 3.4rem;
