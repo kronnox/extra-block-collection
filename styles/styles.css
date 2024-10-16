@@ -19,6 +19,14 @@
   --color-black: #000;
   --color-blue: #3b63fb;
   --color-dark-blue: #1d3ecf;
+  --color-babyblue: #cce5ff;
+  --color-navy: #004085;
+  --color-vanilla: #fff3cd;
+  --color-mustard: #856404;
+  --color-rose: #f8d7da;
+  --color-bordeaux: #721c24;
+  --color-light-green: #d4edda;
+  --color-green: #155724;
 
   /* colors */
   --color-background: var(--color-white);
@@ -26,6 +34,15 @@
   --color-text: var(--color-dark-gray);
   --color-link: var(--color-blue);
   --color-link-hover: var(--color-dark-blue);
+  --color-info: var(--color-navy);
+  --color-info-background: var(--color-babyblue);
+  --color-warning: var(--color-mustard);
+  --color-warning-background: var(--color-vanilla);
+  --color-error: var(--color-bordeaux);
+  --color-error-background: var(--color-rose);
+  --color-success: var(--color-green);
+  --color-success-background: var(--color-light-green);
+
 
   /* base fonts */
   --font-family-roboto: roboto, roboto-fallback, sans-serif;
