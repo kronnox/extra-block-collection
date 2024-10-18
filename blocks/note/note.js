@@ -1,4 +1,4 @@
-import { decorateIcons } from "../../scripts/aem.js";
+import { decorateIcons } from '../../scripts/aem.js';
 
 /**
  * loads and decorates the note
